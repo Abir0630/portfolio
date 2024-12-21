@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labbassi Abir - Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styling */
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        scroll-behavior: smooth;
+      }
+
+      /* Navigation */
+      nav {
+        background-color: #1f1f1f;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      nav .profile_name {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      nav .contact_info {
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+
+      nav .topdiv a {
+        color: #e0e0e0;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav .topdiv a:hover {
+        color: #76c7c0;
+      }
+
+      /* Section Styling */
+      section {
+        padding: 60px 30px;
+        border-bottom: 1px solid #2c2c2c;
+      }
+
+      section h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #76c7c0;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile_image {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 3px solid #76c7c0;
+      }
+
+      /* Cards */
+      .skills .skill,
+      .certificates-card,
+      .project-card {
+        background-color: #1f1f1f;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        transition: transform 0.3s;
+      }
+
+      .skills .skill:hover,
+      .certificates-card:hover,
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #1f1f1f;
+        color: #e0e0e0;
+        position: relative;
+      }
+
+      footer a {
+        color: #76c7c0;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Pop-up Styling */
+      #popup {
+        visibility: hidden;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #1f1f1f;
+        color: #e0e0e0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      #popup button {
+        background-color: #76c7c0;
+        color: #121212;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #popup button:hover {
+        background-color: #64b3ad;
+      }
+
+      #all_recommendations {
+        margin-top: 20px;
+      }
+
+      .recommendation {
+        margin-bottom: 10px;
+        font-style: italic;
+        color: #76c7c0;
+      }
+    </style>
+    <script>
+      function addRecommendation() {
+        let recommendation = document.getElementById("new_recommendation");
+        if (recommendation.value.trim() != "") {
+          console.log("New recommendation added");
+          let element = document.createElement("div");
+          element.className = "recommendation";
+          element.innerHTML = `&#8220;${recommendation.value}&#8221;`;
+          document.getElementById("all_recommendations").appendChild(element);
+          recommendation.value = "";
+        }
+      }
+
+      function showPopup(bool) {
+        document.getElementById("popup").style.visibility = bool ? "visible" : "hidden";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="profile_name">Labbassi Abir</div>
+      <div class="emaill">labbassi.abiir@gmail.com</div>
+      <div class="phone">+212682878865</div>
+      <div class="topdiv">
+        <a href="#about-me">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </nav>
+
+    <!-- About Me -->
+    <section id="about-me" class="container">
+      <div>
+        <img
+          src="https://miro.medium.com/max/1400/1*qdAW1TjCN57h1lbuuzvchg.gif"
+          class="profile_image"
+          alt="Profile Picture"
+        />
+      </div>
+      <div>
+        <h1>Hi, I'm Labbassi Abir!</h1>
+        <p>
+            I am a PhD student specializing in entrepreneurial ecosystems and AI-driven optimization, with a focus on modeling risk and failure dynamics using advanced artificial intelligence techniques. My academic and professional background includes certifications in Google Data Analysis, Google Advanced Data Analysis, IBM AI Engineer, IBM Data Science, IBM AI Developer, and Google Project Management. These have equipped me with strong skills in data science, machine learning, and AI-driven problem-solving.
+
+            I am passionate about exploring the intersection of artificial intelligence and entrepreneurship, aiming to contribute to innovative solutions for real-world challenges. My technical expertise includes programming languages such as Python and R and proficiency in AI frameworks like TensorFlow and Scikit-learn. While I am at the beginning of my PhD journey, I am eager to leverage my skills and certifications to engage in meaningful research and contribute to cutting-edge projects.
+ 
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+          <div class="skill">
+            <h3>Data Analytics</h3>
+            <p>
+              Statistical analysis, exploratory data analysis (EDA), and visualization using Python and SQL.
+            </p>
+          </div>
+          <div class="skill">
+            <h3>Machine Learning</h3>
+            <p>
+              Supervised and unsupervised learning, neural networks, and deep learning techniques.
+            </p>
+          </div>
+          <div class="skill">
+            <h3>Generative AI</h3>
+            <p>
+              Building generative models, AI-powered applications, and custom chatbot systems.
+            </p>
+          </div>
+          <div class="skill">
+            <h3>AI Tools & Frameworks</h3>
+            <p>
+              TensorFlow, Keras, PyTorch, Scikit-learn, and IBM Watson.
+            </p>
+          </div>
+          <div class="skill">
+            <h3>Programming</h3>
+            <p>
+              Python, R, SQL.
+            </p>
+          </div>
+          <div class="skill">
+            <h3>Project Management</h3>
+            <p>
+              Agile methodologies, end-to-end project lifecycle management, and cross-functional collaboration.
+            </p>
+          </div>
+          <div class="skill">
+            <h3>Other Skills</h3>
+            <p>
+              Transfer learning, and deployment.
+            </p>
+          </div>
+        </div>
+      </section>
+  
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2>Certificates</h2>
+        <div class="certificates-list">
+          <div class="certificates-card">
+            <h3>IBM AI Developer</h3>
+            <ul>
+              <li><a href="https://coursera.org/share/f1f54b4985eb0d9c9bc720d8e3ab7622" target="_blank">View Certificate</a></li>
+            </ul>
+          </div>
+          <div class="certificates-card">
+            <h3>IBM AI Engineering</h3>
+            <ul>
+              <li><a href="https://coursera.org/share/339fbfc1810e37a251647cb690afb0d4" target="_blank">View Certificate</a></li>
+            </ul>
+          </div>
+          <div class="certificates-card">
+            <h3>IBM Data Science</h3>
+            <ul>
+              <li><a href="https://coursera.org/share/ac01f71e1d082872e2b0b5926ebadfd4" target="_blank">View Certificate</a></li>
+            </ul>
+          </div>
+          <div class="certificates-card">
+            <h3>Google Advanced Data Analytics</h3>
+            <ul>
+              <li><a href="https://coursera.org/share/559b46573446f2c517b73dc438e16447" target="_blank">View Certificate</a></li>
+            </ul>
+          </div>
+          <div class="certificates-card">
+            <h3>Google Data Analytics</h3>
+            <ul>
+              <li><a href="https://coursera.org/share/1e5620d3916d16ad0c114437d20590a8" target="_blank">View Certificate</a></li>
+            </ul>
+          </div>
+          <div class="certificates-card">
+            <h3>Google Project Management</h3>
+            <ul>
+              <li><a href="https://coursera.org/share/3007b2416d42062e6c4d2a88c7d3afb6" target="_blank">View Certificate</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-list">
+          <div class="project-card">
+            <h3>10 Object Recognition Using ResNet</h3>
+            <ul>
+              <li>
+                Developed a deep learning model for identifying objects using ResNet architecture. 
+                <a href="https://colab.research.google.com/drive/1UYvPcvW5tYHDJVEg9o9igtuMRPnng8sn?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Face Mask Detection Using CNN</h3>
+            <ul>
+              <li>
+                Built a convolutional neural network to detect face masks in real-time. 
+                <a href="https://colab.research.google.com/drive/1ddF1h430KnlJ9tUc028nOqFlSHrTqqnf?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Dog-Cat Image Classification Using Transfer Learning</h3>
+            <ul>
+              <li>
+                Applied transfer learning techniques for binary classification of animal images. 
+                <a href="https://colab.research.google.com/drive/1qqLXm7J0JBDGj2ZOGL6df40Idd9Zfgk8?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Breast Cancer Prediction</h3>
+            <ul>
+              <li>
+                Designed a machine learning model to predict breast cancer diagnosis using medical data. 
+                <a href="https://colab.research.google.com/drive/1ZEToDCP7yjgXXYuwzzGzHNUM4mV-lQc_?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Diabetes Prediction</h3>
+            <ul>
+              <li>
+                Created a predictive system for diagnosing diabetes based on patient data. 
+                <a href="https://colab.research.google.com/drive/1arTAD7gelJJN3KJm3WSM5AubvG2NyLZ8?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Heart Disease Prediction</h3>
+            <ul>
+              <li>
+                Built a model to forecast heart disease risk. 
+                <a href="https://colab.research.google.com/drive/1Rr2f8sO5dl3ZGKxeehayU9GfDTqFBZ-E?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Parkinson’s Disease Prediction</h3>
+            <ul>
+              <li>
+                Designed a classifier to identify Parkinson’s disease using voice-based features. 
+                <a href="https://colab.research.google.com/drive/14OU2BeKmckyonpUkdLoNIQjtD80mDtpK?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>House Price Prediction</h3>
+            <ul>
+              <li>
+                Implemented a regression model to estimate house prices based on various features. 
+                <a href="https://colab.research.google.com/drive/1JvNu9sCEkQ-kuWbmZ1YpehUl_4NgFULX?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Loan Status Prediction</h3>
+            <ul>
+              <li>
+                Developed a predictive system for determining loan approval likelihood. 
+                <a href="https://colab.research.google.com/drive/1IAZqGV3Gx3hiWo_vCN2rxlCsbwFF5-t4?usp=sharing" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+          <div class="project-card">
+            <h3>Generative AI-Powered Applications</h3>
+            <ul>
+              <li>
+                Meeting Assistant: Designed an AI-powered assistant to summarize and track meetings. 
+                Custom Chatbot: Created a chatbot resembling ChatGPT functionalities for tailored use cases. 
+                Image Captioning Using Generative AI: Built a system to generate captions for images. 
+                <a href="https://coursera.org/share/b40c021dfe6b7ef394e9c781e1983b80" target="_blank">View Project</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Labbassi Abir. Designed with passion.</p>
+    </footer>
+ 
+    <!-- Pop-up -->
+    <div id="popup">
+      <p>Thank you for your recommendation!</p>
+      <button onclick="showPopup(false)">Close</button>
+    </div>
+  </body>
+</html>
